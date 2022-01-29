@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cli-serv-bridge
+spec:
+  selector:
+    matchLabels:
+      app: cli-serv-bridge
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: cli-serv-bridge
+    spec:
+      containers:
+      - name: cli-serv-bridge
+        image: djortiz32/cli-serv-bridge
+

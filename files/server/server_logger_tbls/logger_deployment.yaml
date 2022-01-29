@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serv-listener
+spec:
+  selector:
+    matchLabels:
+      app: serv-listener
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: serv-listener
+    spec:
+      containers:
+      - name: serv-listener
+        image: djortiz32/hw3-logger-serv
+
