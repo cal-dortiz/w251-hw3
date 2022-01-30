@@ -44,12 +44,6 @@ local_mqttclient = mqtt.Client()
 local_mqttclient.on_connect = on_connect_local
 local_mqttclient.connect(LOCAL_MQTT_HOST, port=1883, keepalive=60)
 
-
-#print('Connecting to remote...')
-#remote_mqttclient = mqtt.Client()
-#remote_mqttclient.on_connect = on_connect_remote
-#remote_mqttclient.connect(REMOTE_MQTT_HOST, port=1880, keepalive=60)
-
 local_mqttclient.on_message = on_message
 
 # go into a loop
