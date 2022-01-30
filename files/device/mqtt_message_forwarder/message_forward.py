@@ -5,8 +5,8 @@ LOCAL_MQTT_HOST = "cli-mosquitto-service"
 LOCAL_MQTT_PORT = 1883
 LOCAL_MQTT_TOPIC ="face_finder" 
 
-REMOTE_MQTT_HOST = "10.43.53.158"
-REMOTE_MQTT_PORT = 1883
+REMOTE_MQTT_HOST = "54.173.82.210"
+REMOTE_MQTT_PORT = 30001
 REMOTE_MQTT_TOPIC = "face_finder"
 
 print(f'{LOCAL_MQTT_HOST} {LOCAL_MQTT_PORT}')
@@ -31,7 +31,7 @@ def on_message(client,userdata, msg):
 
     remote_mqttclient = mqtt.Client()
     remote_mqttclient.on_connect = on_connect_remote
-    remote_mqttclient.connect(REMOTE_MQTT_HOST, port=1883, keepalive=60)
+    remote_mqttclient.connect(REMOTE_MQTT_HOST, port=30001, keepalive=60)
 
     # Forward Message
     msg = msg.payload
