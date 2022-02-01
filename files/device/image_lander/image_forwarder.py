@@ -5,8 +5,8 @@ import cv2
 from datetime import datetime
 import numpy as np
 
-LOCAL_MQTT_HOST = "serv-mosquitto-service"
-#LOCAL_MQTT_HOST ='10.43.155.173'
+# LOCAL_MQTT_HOST = "serv-mosquitto-service"
+LOCAL_MQTT_HOST ='10.43.155.173'
 LOCAL_MQTT_PORT = 1883
 LOCAL_MQTT_TOPIC ="face_finder" 
 

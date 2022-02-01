@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-lander
+spec:
+  selector:
+    matchLabels:
+      app: image-lander
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: image-lander
+    spec:
+      containers:
+      - name: image-lander
+        image: djortiz32/image-lander
+        env:
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: aws-secret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: aws-secret
+              key: password
+

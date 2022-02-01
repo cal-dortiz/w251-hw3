@@ -46,10 +46,11 @@ while(True):
         # Convert image to binary
         rc,png = cv2.imencode('.png', frame)
         msg = png.tobytes()
+        print(msg)
 
         # Send Message
-        local_mqttclient.publish(LOCAL_MQTT_TOPIC,"Face Found")
-        # local_mqttclient.publish(LOCAL_MQTT_TOPIC,"Hello MQTT...")
+        # local_mqttclient.publish(LOCAL_MQTT_TOPIC,"Face Found")
+        local_mqttclient.publish(LOCAL_MQTT_TOPIC, msg)
 
         # For debug only
         print('Face was Found')

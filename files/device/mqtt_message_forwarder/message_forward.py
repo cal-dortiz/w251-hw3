@@ -21,8 +21,9 @@ def on_connect_remote(client, userdata, flags, rc):
 	
 def on_message(client,userdata, msg):
   try:
-    print("message received: ",str(msg.payload.decode("utf-8")))
-    
+    #print("message received: ",str(msg.payload.decode("utf-8")))
+    print("message received: ",msg.payload)    
+
     # Establish Remote connection
     print('Connecting to remote...')
 
