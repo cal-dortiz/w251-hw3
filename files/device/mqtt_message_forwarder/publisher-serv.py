@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
   
 
-LOCAL_MQTT_HOST = "54.173.82.210"
+LOCAL_MQTT_HOST = "10.43.155.173"
 LOCAL_MQTT_PORT = 30001
 LOCAL_MQTT_TOPIC ="face_finder" 
 
