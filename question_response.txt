@@ -1,0 +1,21 @@
+1)MQTT Topic Used
+ - I used the topic "face_finder". 
+
+ Topics can consists of multiple levels, foe example "animal/dog/husky" and are case sensitive. This topic structure allows subscribers to subscribe to multiple topics along a similar topic by using the "+" sign instead of the topic.
+
+ Example:
+Topic animal/dog/+ would subscribe to the following animal/dog/lab animal/dog/husky and animal/dog/ducktoller.
+
+I used the topic "face_finder" due to the objective of the application, if a face appears in screan, capture the still and store it in AWS. A more complicated topic structure could be used for an application that was classifying something.
+
+2)QOS Used
+
+QoS stands for quality of service and there are three levels:
+0: Will send the message once and is the minimal level of service
+1: Will guarantee the message is delivered once
+2: will guarantee the message is received by its intended recipients at least once
+
+I chose a QOS of 0 because of the goal of the application is to land still images into s3. The reasons I chose this level of service is:
+1: The application life is only a minute to prove the application works so connection stability is less important
+2: The loss of a few images during transmission is not important due to the number of images sent and as long as a few of the images land in s3 then the goal of the application is meant
+3: There is no need for message queuing
